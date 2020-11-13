@@ -27,7 +27,7 @@ export class TablaVacunasModalComponent implements OnInit {
     this.service.buscar(hola).subscribe(result => {
       if(result != null){
         this.persona = result;
-        this.vacunas = this.persona.Vacunas;
+        this.vacunas = this.persona.vacunas;
       }
     });
     

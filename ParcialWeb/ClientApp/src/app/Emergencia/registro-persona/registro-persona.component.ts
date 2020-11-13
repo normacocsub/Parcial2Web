@@ -57,9 +57,9 @@ export class RegistroPersonaComponent implements OnInit {
     this.add();
   }
   add(){
-    this.persona.Vacunas = [];
+    this.persona.vacunas = [];
     this.vacuna = this.formGroup.value;
-    this.persona.Vacunas.push(this.vacuna);
+    this.persona.vacunas.push(this.vacuna);
     this.service.post(this.persona).subscribe(result => {
       if(result != null){
         const messageBox = this.modalService.open(ModalComponent)

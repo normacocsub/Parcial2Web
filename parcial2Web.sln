@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parcial2WebDotNet", "Parcial2WebDotNet\Parcial2WebDotNet.csproj", "{909C7872-7D95-4D42-B0B4-0126A1E80F1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parcialweb", "Parcialweb\Parcialweb.csproj", "{07C2DBE6-EE2C-4762-910A-B549D1199745}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{909C7872-7D95-4D42-B0B4-0126A1E80F1F}.Release|x64.Build.0 = Release|Any CPU
 		{909C7872-7D95-4D42-B0B4-0126A1E80F1F}.Release|x86.ActiveCfg = Release|Any CPU
 		{909C7872-7D95-4D42-B0B4-0126A1E80F1F}.Release|x86.Build.0 = Release|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Debug|x64.Build.0 = Debug|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Debug|x86.Build.0 = Debug|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Release|x64.ActiveCfg = Release|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Release|x64.Build.0 = Release|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Release|x86.ActiveCfg = Release|Any CPU
+		{07C2DBE6-EE2C-4762-910A-B549D1199745}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

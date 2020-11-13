@@ -4,8 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ParcialWeb;
 
-namespace Parcialweb.Controllers
+namespace Parcial1Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Parcialweb": {
+    "ParcialWeb": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -27,7 +27,11 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -52,18 +56,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Parcialweb:build"
+            "browserTarget": "ParcialWeb:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Parcialweb:build:production"
+              "browserTarget": "ParcialWeb:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Parcialweb:build"
+            "browserTarget": "ParcialWeb:build"
           }
         },
         "test": {
@@ -122,7 +126,7 @@
         }
       }
     },
-    "Parcialweb-e2e": {
+    "ParcialWeb-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -130,7 +134,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Parcialweb:serve"
+            "devServerTarget": "ParcialWeb:serve"
           }
         },
         "lint": {
@@ -145,8 +149,8 @@
       }
     }
   },
-  "defaultProject": "Parcialweb",
+  "defaultProject": "ParcialWeb",
   "cli": {
-    "analytics": "c26d9eca-45e7-4c69-ba4d-099e0d6bb1ab"
+    "analytics": "a6559bed-3aa9-4e8d-84ab-0ee69f008794"
   }
 }

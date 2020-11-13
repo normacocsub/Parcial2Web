@@ -1,6 +1,6 @@
 using System;
 
-namespace Parcialweb
+namespace ParcialWeb
 {
     public class WeatherForecast
     {

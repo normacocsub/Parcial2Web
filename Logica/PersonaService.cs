@@ -26,27 +26,45 @@ namespace Logica
                 vacunas = _context.Vacunas.ToList();
                 if (personaresponse != null)
                 {
-                    foreach (var item in persona.Vacunas)
+                    foreach (var item in vacunas)
                     {
-                        foreach (var item2 in vacunas)
+                        if(item.CedulaPersona == personaresponse.Cedula)
                         {
-                            if (item2.CedulaPersona == persona.Cedula)
+                            personaresponse.Vacunas.Add(item);
+                        }
+                    }
+
+                    if(personaresponse.Vacunas.Count == 0)
+                    {
+                        foreach (var item in persona.Vacunas)
+                        {
+                            item.NombreVacuna += ";" + persona.Cedula;
+                            item.CedulaPersona = persona.Cedula;
+                            item.CalcularEdadAplicacion(persona.FechaNacimiento);
+                            _context.Vacunas.Add(item);
+                        }
+                    }
+                    else
+                    {
+                        foreach (var item in persona.Vacunas)
+                        {
+                            item.NombreVacuna += ";" + persona.Cedula;
+                            item.CedulaPersona = persona.Cedula;
+                            item.CalcularEdadAplicacion(persona.FechaNacimiento);
+                            foreach (var item2 in personaresponse.Vacunas)
                             {
-                                item.NombreVacuna += ";" + persona.Cedula;
-                                if (item.NombreVacuna != item2.NombreVacuna)
+                                if(item.NombreVacuna != item.NombreVacuna)
                                 {
-                                    item.CalcularEdadAplicacion(persona.FechaNacimiento);
-                                    
-                                    item.CedulaPersona = persona.Cedula;
                                     _context.Vacunas.Add(item);
                                 }
                                 else
                                 {
-                                    return new GuardarPersonaResponse("Ya Existe");
+                                    return new GuardarPersonaResponse("Ya existe");
                                 }
                             }
                         }
                     }
+
                     _context.SaveChanges();
                     return new GuardarPersonaResponse(persona);
                 }
@@ -54,6 +72,10 @@ namespace Logica
                 {
                     _context.Personas.Add(persona);
                     _context.SaveChanges();
+                    if (persona.Vacunas == null)
+                    {
+                        persona.Vacunas = new List<Vacuna>();
+                    }
                     foreach (var item in persona.Vacunas)
                     {
                         item.NombreVacuna += ";" + persona.Cedula;
@@ -62,7 +84,11 @@ namespace Logica
                         _context.Vacunas.Add(item);
                     }
 
-                    _context.SaveChanges();
+
+                    if (persona.Vacunas.Count > 0)
+                    {
+                        _context.SaveChanges();
+                    }
                     return new GuardarPersonaResponse(persona);
                 }
             }
@@ -79,11 +105,11 @@ namespace Logica
                 var personaresponse = _context.Personas.Find(cedula);
                 var vacunas = _context.Vacunas.ToList();
 
-                if(personaresponse != null)
+                if (personaresponse != null)
                 {
                     foreach (var item in vacunas)
                     {
-                        if(item.CedulaPersona == personaresponse.Cedula)
+                        if (item.CedulaPersona == personaresponse.Cedula)
                         {
                             personaresponse.Vacunas.Add(item);
                         }
@@ -95,7 +121,7 @@ namespace Logica
                     return new BuscarPersonaResponse($"No existe");
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return new BuscarPersonaResponse($"Error: {e.Message}");
             }
@@ -112,7 +138,7 @@ namespace Logica
                 {
                     foreach (var item2 in vacunas)
                     {
-                        if(item.Cedula == item2.CedulaPersona)
+                        if (item.Cedula == item2.CedulaPersona)
                         {
                             item.Vacunas.Add(item2);
                         }
@@ -121,7 +147,7 @@ namespace Logica
                 }
                 return new ConsultarPersonaResponse(personass);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return new ConsultarPersonaResponse($"Error: {e.Message}");
             }
@@ -162,7 +188,7 @@ namespace Logica
             public bool Error { get; set; }
             public string Mensaje { get; set; }
             public Persona Persona { get; set; }
-            
+
         }
 
         public class GuardarPersonaResponse

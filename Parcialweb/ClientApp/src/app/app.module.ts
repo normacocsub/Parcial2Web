@@ -1,17 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { ModalComponent } from './@base/modal/modal.component';
 import { AppRoutingModule } from './app-routing.module';
-import { RegistroVacunaComponent } from './parcial/registro-vacuna/registro-vacuna.component';
-import { ModalComponent } from './@base/modal/modal/modal.component';
+import { PersonaService } from './services/persona.service';
+import { RegistroPersonaComponent } from './Emergencia/registro-persona/registro-persona.component';
+import { ConsultaPersonaComponent } from './Emergencia/consulta-persona/consulta-persona.component';
+import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
+import { RegistropersonaComponent } from './@base/modal/registropersona/registropersona.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,17 @@ import { ModalComponent } from './@base/modal/modal/modal.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    RegistroVacunaComponent,
-    ModalComponent
+    ModalComponent,
+    RegistroPersonaComponent,
+    ConsultaPersonaComponent,
+    FiltroPersonaPipe,
+    RegistropersonaComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
@@ -35,7 +42,7 @@ import { ModalComponent } from './@base/modal/modal/modal.component';
     AppRoutingModule
   ],
   entryComponents: [ModalComponent],
-  providers: [],
+  providers: [PersonaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

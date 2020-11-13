@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="form-group">
+            <div class="col-6">
+                <input [(ngModel)]="searchText" type="text" class="formcontrol" placeholder="Type to filter">
+            </div>​
+        </div>
+    </div>
+    <hr>
+    
+    <table class="table table-striped" *ngIf='personas && personas.length '>​
+    
+        <thead class="thead-dark">​
+    
+            <tr>​
+                <th scope="col">#</th>​
+                <th>identificación</th>​
+                <th>Nombre </th>
+                <th>Apellido</th>​
+                <th>Edad</th>
+                ​<th>sexo</th>
+                <th>ValorApoyo</th>
+            </tr>​
+        </thead>
+        ​
+        <tbody>​
+            <tr *ngFor="let persona of personas |filtroPersona:searchText; index as i ">​
+                <th scope="row">{{ i + 1 }}</th>​
+                <td>{{ persona.identificacion }}</td>​
+                <td>{{ persona.nombre }}</td>
+                <td>{{ persona.apellidos }}</td>​​
+                <td>{{ persona.edad }}</td>​
+                <td>{{ persona.sexo }}</td>
+                <td>{{ persona.ayudas.valorApoyo | currency: 'COP' }}</td>
+            </tr>​
+        </tbody>​
+    </table>
+    
+    <div class="row space-rows">
+        <div class="col">
+            <div class="card cards-shadown cards-hover" data-aos="slide-right" data-aos-duration="950">
+                <div class="card-header"><span class="space"><a href="#"></a></span>
+                    <div class="cardheader-text">
+                        <h4 id="heading-card">{{numeroAyudas}}</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text sub-text-color">Total Ayudas</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card cards-shadown cards-hover" data-aos="flip-up" data-aos-duration="950">
+                <div class="card-header cards-header-hover"><span class="space"><a href="#"></a></span>
+                    <div class="cardheader-text">
+                        <h4 id="heading-card">{{total}}</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text sub-text-color">Valor Total Ayudas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

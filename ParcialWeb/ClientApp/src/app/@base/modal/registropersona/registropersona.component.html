@@ -1,0 +1,80 @@
+<div>
+    <div class="modal-header">
+        <div>
+            <div class="container form-group">
+
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <h2>Registro de Personas</h2>
+
+
+                        <form>
+                            <div class="form-group">​
+
+                                <label>Identificacion</label>​
+
+                                <input type="text" value="{{cedula}}" disabled name="identificacion" />​
+                            </div>
+                            <div class="form-group">​
+
+                                <label>TipoDocumento</label>​
+                                <select [(ngModel)]="persona.tipoDocumento" name="tipoDocumento" id="tipoDocumento">
+                                    <option>RC</option>
+                                    <option>TI</option>
+                                </select>
+
+                            </div>
+
+                            <div class="form-group">​
+
+                                <label>Nombre</label>​
+                                <input type="text" [(ngModel)]="persona.nombre" name="nombre" />​
+                            </div>
+
+                            <div class="form-group">​
+
+                                <label>Apellido</label>​
+                                <input type="text" [(ngModel)]="persona.apellido" name="apellido" />​
+                            </div>
+
+
+                            <div class="form-group">​
+
+                                <label>Fecha</label>​
+                                <input type="date" [(ngModel)]="persona.fechaNacimiento" name="fecha" />​
+                            </div>
+
+                            <div class="form-group">​
+
+                                <label>Institucion</label>​
+                                <input type="text" [(ngModel)]="persona.institucionEducativa"
+                                    name="institucionEducativa" />​
+                            </div>
+
+                            <div class="form-group">​
+
+                                <label>Acudiente</label>​
+                                <input type="text" [(ngModel)]="persona.nombreAcudiente" name="acudiente" />​
+                            </div>
+
+                            <div class="text-center">
+                                <button class="btn btn-primary" (click)="add()">Register</button>
+                                <button class="btn btn-danger" type="reset">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</div>

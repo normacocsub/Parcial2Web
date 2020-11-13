@@ -1,0 +1,156 @@
+<div>
+    <div class="container form-group">
+
+
+        <div class="col-md-6 offset-md-3">
+            <h2>Registro de Personas</h2>
+
+
+            <form [formGroup]="formGroup">
+
+                <div class="form-group row col-md-5">​
+
+                    <label>Identificacion</label>​
+
+                    <input type="text" [ngClass]="{'is-invalid': control.Cedula.errors && control.Cedula.touched}"
+                        formControlName="Cedula" name="Cedula" />
+                    
+                        <div *ngIf="control.Cedula.errors" class="invalid-feedback">
+                            <div *ngIf="control.Cedula.errors.required">Se requiere la identificacion</div>
+                        </div>
+                    
+                    <div class="row">
+                        <button type="input" (click)="getPersona();"> BuscarPersona </button>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div>
+                        <div class="form-group">​
+
+                            <label>TipoDocumento</label>​
+                            <input type="text"
+                            [ngClass]="{'is-invalid': control.TipoDocumento.errors && control.TipoDocumento.touched}"
+                        formControlName="TipoDocumento"
+                            value="{{persona.tipoDocumento}}" name="tipoDocumento"/>
+                            <div *ngIf="control.TipoDocumento.errors" class="invalid-feedback">
+                                <div *ngIf="control.TipoDocumento.errors.required">Se requiere el TipoDocumento</div>
+                            </div>​
+                        </div>
+
+                        <div class="form-group">​
+
+                            <label>Nombre</label>​
+                            <input type="text"
+                            [ngClass]="{'is-invalid': control.Nombre.errors && control.Nombre.touched}"
+                        formControlName="Nombre"
+                            value="{{persona.nombre}}" name="Nombre" />
+                            
+                            <div *ngIf="control.Nombre.errors" class="invalid-feedback">
+                                <div *ngIf="control.Nombre.errors.required">Se requiere el nombre</div>
+                            </div>​
+                        </div>
+
+
+                        <div class="form-group">​
+
+                            <label>Apellido</label>​
+                            <input type="text"
+                            [ngClass]="{'is-invalid': control.Apellido.errors && control.Apellido.touched}"
+                        formControlName="Apellido"
+                            value="{{persona.apellido}}" name="apellido" />
+                            
+                            <div *ngIf="control.Apellido.errors" class="invalid-feedback">
+                                <div *ngIf="control.Apellido.errors.required">Se requiere el Apellido</div>
+                            </div>​
+                        </div>
+
+                        <div class="form-group">​
+
+                            <label>Fecha</label>​
+                            <input type="date"
+                            [ngClass]="{'is-invalid': control.fechaNacimiento.errors && control.fechaNacimiento.touched}"
+                        formControlName="fechaNacimiento"
+                            value="{{persona.fechaNacimiento}}" name="fecha" />
+                            
+                            <div *ngIf="control.fechaNacimiento.errors" class="invalid-feedback">
+                                <div *ngIf="control.fechaNacimiento.errors.required">Se requiere la fechaNacimiento</div>
+                            </div>​
+                        </div>
+
+                        <div class="form-group">​
+
+                            <label>Institucion</label>​
+                            <input type="text"
+                            [ngClass]="{'is-invalid': control.InstitucionEducativa.errors && control.InstitucionEducativa.touched}"
+                        formControlName="InstitucionEducativa"
+                            value="{{persona.institucionEducativa}}" name="institucionEducativa" />
+                            
+                            <div *ngIf="control.InstitucionEducativa.errors" class="invalid-feedback">
+                                <div *ngIf="control.InstitucionEducativa.errors.required">Se requiere la InstitucionEducativa</div>
+                            </div>​
+                        </div>
+
+                        <div class="form-group">​
+
+                            <label>Acudiente</label>​
+                            <input type="text"
+                            [ngClass]="{'is-invalid': control.NombreAcudiente.errors && control.NombreAcudiente.touched}"
+                            formControlName="NombreAcudiente"
+                            value="{{persona.nombreAcudiente}}" name="acudiente" />
+                            
+                            <div *ngIf="control.NombreAcudiente.errors" class="invalid-feedback">
+                                <div *ngIf="control.NombreAcudiente.errors.required">Se requiere el NombreAcudiente</div>
+                            </div>​
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <h2>Registro Vacuna</h2>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tipo Vacuna</label>​
+                            <select name="tipovacuna"
+                            [ngClass]="{'is-invalid': control.NombreVacuna.errors && control.NombreVacuna.touched}"
+                            formControlName="NombreVacuna"
+                                id="NombreVacuna">
+                                <option>Haemophilus influenza tipo B</option>
+                                <option>Tdpa</option>
+                                <option>DTPa</option>
+                                <option>Hepatitis A</option>
+                                <option>Hepatitis B</option>
+                                <option>virus del papiloma Humano</option>
+                            </select>
+
+                            <div *ngIf="control.NombreVacuna.errors" class="invalid-feedback">
+                                <div *ngIf="control.NombreVacuna.errors.required">Seleccione una opcion</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Fecha Vacuna</label>
+                            <input type="date"
+                            [ngClass]="{'is-invalid': control.FechaVacuna.errors && control.FechaVacuna.touched}"
+                            formControlName="FechaVacuna"
+                            name="FechaVacuna" id="FechaVacuna">
+
+                            <div *ngIf="control.FechaVacuna.errors" class="invalid-feedback">
+                                <div *ngIf="control.FechaVacuna.errors.required">Se requiere la fecha </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary mr-1" (click)="onSubmit()" [disabled]="formGroup.invalid">Register</button>
+                        <button class="btn btn-secondary" type="reset">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>

@@ -2,14 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HandleHttpErrorService } from '../@base/handle-http-error.service';
+import { Persona } from '../emergencia/models/persona';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Persona } from '../parcial/models/persona';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaService {
-
   baseUrl: string;
   constructor(
     private http: HttpClient,
@@ -30,4 +29,5 @@ export class PersonaService {
       catchError(this.handdleErrorService.handleError<Persona>('Buscar Persona', null))
     );
   }
+
 }

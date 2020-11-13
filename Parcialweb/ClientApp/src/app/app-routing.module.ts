@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RegistroVacunaComponent } from './parcial/registro-vacuna/registro-vacuna.component';
 import { Routes, RouterModule } from '@angular/router';
+import { RegistroPersonaComponent } from './Emergencia/registro-persona/registro-persona.component';
+import { ConsultaPersonaComponent } from './Emergencia/consulta-persona/consulta-persona.component';
 
 const routes: Routes = [
-  { path: 'registro', component: RegistroVacunaComponent}
-  //{ path: 'consulta', component: ConsultaPersonaComponent}
+  { path: 'registro', component: RegistroPersonaComponent},
+  { path: 'consulta', component: ConsultaPersonaComponent}
 ];
 
 @NgModule({
@@ -14,6 +15,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule]
+  exports:[RouterModule]
 })
 export class AppRoutingModule { }
+

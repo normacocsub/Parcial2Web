@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, of } from 'rxjs';
-import { ModalComponent } from './modal//modal/modal.component';
+import { ModalComponent } from './modal/modal.component';
 
 @Injectable({
   providedIn: 'root'

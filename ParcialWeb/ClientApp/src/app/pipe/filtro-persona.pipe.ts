@@ -7,12 +7,9 @@ import { Persona } from '../Emergencia/models/persona';
 export class FiltroPersonaPipe implements PipeTransform {
 
   personas2: Persona[];
-  transform(personas: Persona[], searchText: string): any {
-return null;
-
-    
-
-
+  transform(personas: Persona[], searchText: string): any {    
+    if(searchText == null) return personas;
+    return personas.filter(d => d.cedula.toLowerCase().indexOf(searchText.toLowerCase())!==1);
   }
 
 }

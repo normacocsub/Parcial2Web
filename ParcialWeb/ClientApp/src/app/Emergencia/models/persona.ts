@@ -11,7 +11,5 @@ export class Persona {
     nombreAcudiente: string;
     Vacunas: Vacuna[];
 
-    constructor(){
-        this.Vacunas = [];
-    }
+    
 }

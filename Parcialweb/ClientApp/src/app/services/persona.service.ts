@@ -30,4 +30,11 @@ export class PersonaService {
     );
   }
 
+  gets(): Observable<Persona[]> {
+    return this.http.get<Persona[]>(this.baseUrl + 'api/Persona').pipe(
+      tap(_ => this.handdleErrorService.log('Datos')),
+      catchError(this.handdleErrorService.handleError<Persona[]>('Consulta Persona', null))
+    );
+  }
+
 }

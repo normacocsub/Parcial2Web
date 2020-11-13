@@ -1,0 +1,47 @@
+<div>
+    <div class="modal-header">
+        
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="form-group">
+                <div class="col-6">
+                    <input [(ngModel)]="searchText" type="text" class="formcontrol" placeholder="Filtro Cedula">
+                </div>​
+            </div>
+        </div>
+        <hr>
+        
+        <table class="table table-striped" *ngIf='vacunas && vacunas.length '>​
+        
+            <thead class="thead-dark">​
+        
+                <tr>​
+                    <th scope="col">#</th>​
+                    <th>TipoVacuna</th>
+                    <th>FechaVacuna</th>
+                    <th>Edad Aplicacion</th>
+                </tr>​
+            </thead>
+            ​
+            <tbody>​
+                <tr *ngFor="let vacuna of vacunas |filtroNombrePersonas:searchText; index as i ">​
+                    <th scope="row">{{ i + 1 }}</th>​
+                    <td>{{vacuna.nombreVacuna}}</td>
+                    <td>{{vacuna.fechaVacuna}}</td>
+                    <td>{{vacuna.edadAplicacion}}</td>
+                </tr>​
+            </tbody>​
+        </table>
+    
+    </div>
+    <div class="modal-body">
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</div>

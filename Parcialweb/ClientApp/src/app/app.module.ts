@@ -11,10 +11,14 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ModalComponent } from './@base/modal/modal.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonaService } from './services/persona.service';
-import { RegistroPersonaComponent } from './Emergencia/registro-persona/registro-persona.component';
 import { ConsultaPersonaComponent } from './Emergencia/consulta-persona/consulta-persona.component';
 import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
 import { RegistropersonaComponent } from './@base/modal/registropersona/registropersona.component';
+import { FiltroNombrePersonasPipe } from './pipe/filtro-nombre-personas.pipe';
+import { TablaVacunasModalComponent } from './@base/modal/tabla-vacunas-modal/tabla-vacunas-modal.component';
+import { RegistroPersonaComponent } from './Emergencia/registro-persona/registro-persona.component';
+import { VerVacunasComponent } from './Emergencia/ver-vacunas/ver-vacunas.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { RegistropersonaComponent } from './@base/modal/registropersona/registro
     RegistroPersonaComponent,
     ConsultaPersonaComponent,
     FiltroPersonaPipe,
-    RegistropersonaComponent
+    RegistropersonaComponent,
+    FiltroNombrePersonasPipe,
+    TablaVacunasModalComponent,
+    VerVacunasComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

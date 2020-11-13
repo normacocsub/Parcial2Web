@@ -18,6 +18,18 @@ namespace Parcial2WebDotNet.Models
 
     public class PersonaViewModel : PersonaInputModel
     {
-        
+        public PersonaViewModel(){}
+
+        public PersonaViewModel(Persona persona)
+        {
+            Cedula = persona.Cedula;
+            Nombre = persona.Nombre;
+            Apellido = persona.Apellido;
+            Edad = persona.Edad;
+            FechaNacimiento = persona.FechaNacimiento;
+            InstitucionEducativa = persona.InstitucionEducativa;
+            NombreAcudiente = persona.NombreAcudiente;
+            Vacunas = persona.Vacunas;
+        }
     }
 }

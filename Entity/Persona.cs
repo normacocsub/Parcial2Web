@@ -18,6 +18,13 @@ namespace Entity
         public string NombreAcudiente { get; set; }
         [NotMapped]
         public List<Vacuna> Vacunas { get; set; }
+
+        public Persona()
+        {
+            Vacunas = new List<Vacuna>();
+        }
+
+        
         
     }
 }

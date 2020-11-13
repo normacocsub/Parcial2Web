@@ -32,12 +32,17 @@ namespace Logica
                         {
                             if (item2.CedulaPersona == persona.Cedula)
                             {
+                                item.NombreVacuna += ";" + persona.Cedula;
                                 if (item.NombreVacuna != item2.NombreVacuna)
                                 {
                                     item.CalcularEdadAplicacion(persona.FechaNacimiento);
-                                    item.NombreVacuna += ";" + persona.Cedula;
+                                    
                                     item.CedulaPersona = persona.Cedula;
                                     _context.Vacunas.Add(item);
+                                }
+                                else
+                                {
+                                    return new GuardarPersonaResponse("Ya Existe");
                                 }
                             }
                         }
@@ -65,6 +70,99 @@ namespace Logica
             {
                 return new GuardarPersonaResponse($"Error: {e.Message}");
             }
+        }
+
+        public BuscarPersonaResponse BuscarPersona(string cedula)
+        {
+            try
+            {
+                var personaresponse = _context.Personas.Find(cedula);
+                var vacunas = _context.Vacunas.ToList();
+
+                if(personaresponse != null)
+                {
+                    foreach (var item in vacunas)
+                    {
+                        if(item.CedulaPersona == personaresponse.Cedula)
+                        {
+                            personaresponse.Vacunas.Add(item);
+                        }
+                    }
+                    return new BuscarPersonaResponse(personaresponse);
+                }
+                else
+                {
+                    return new BuscarPersonaResponse($"No existe");
+                }
+            }
+            catch(Exception e)
+            {
+                return new BuscarPersonaResponse($"Error: {e.Message}");
+            }
+        }
+
+        public ConsultarPersonaResponse ConsultarPersonas()
+        {
+            try
+            {
+                var personas = _context.Personas.ToList();
+                var vacunas = _context.Vacunas.ToList();
+                List<Persona> personass = new List<Persona>();
+                foreach (var item in personas)
+                {
+                    foreach (var item2 in vacunas)
+                    {
+                        if(item.Cedula == item2.CedulaPersona)
+                        {
+                            item.Vacunas.Add(item2);
+                        }
+                    }
+                    personass.Add(item);
+                }
+                return new ConsultarPersonaResponse(personass);
+            }
+            catch(Exception e)
+            {
+                return new ConsultarPersonaResponse($"Error: {e.Message}");
+            }
+        }
+
+        public class ConsultarPersonaResponse
+        {
+
+            public ConsultarPersonaResponse(List<Persona> personas)
+            {
+                Error = false;
+                Personas = personas;
+            }
+
+            public ConsultarPersonaResponse(string mensaje)
+            {
+                Error = true;
+                Mensaje = mensaje;
+            }
+            public bool Error { get; set; }
+            public string Mensaje { get; set; }
+            public List<Persona> Personas { get; set; }
+        }
+
+        public class BuscarPersonaResponse
+        {
+            public BuscarPersonaResponse(Persona persona)
+            {
+                Error = false;
+                Persona = persona;
+            }
+
+            public BuscarPersonaResponse(string mensaje)
+            {
+                Error = true;
+                Mensaje = mensaje;
+            }
+            public bool Error { get; set; }
+            public string Mensaje { get; set; }
+            public Persona Persona { get; set; }
+            
         }
 
         public class GuardarPersonaResponse

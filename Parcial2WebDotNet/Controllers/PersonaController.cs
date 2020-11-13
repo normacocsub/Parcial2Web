@@ -1,3 +1,4 @@
+using System.Linq;
 using Datos;
 using Entity;
 using Logica;
@@ -26,12 +27,22 @@ namespace Parcial2WebDotNet.Controllers
             {
                 ModelState.AddModelError("Error al guardar persona", response.Mensaje);
                 var detallesproblemas = new ValidationProblemDetails(ModelState);
+                
+                if(response.Mensaje == "Ya Existe")
+                {
+                    detallesproblemas.Status = StatusCodes.Status404NotFound;
+                }
+                else
+                {
+                    detallesproblemas.Status = StatusCodes.Status500InternalServerError;
+                }
                 return BadRequest(detallesproblemas);
             }
             return Ok(response.Persona);
         }
 
-/*
+
+
         // GET: api/Persona/5​
         [HttpGet("{identificacion}")]
         public ActionResult<PersonaViewModel> Get(string identificacion)
@@ -39,7 +50,7 @@ namespace Parcial2WebDotNet.Controllers
             var response = _service.BuscarPersona(identificacion);
             if(response.Error)
             {
-                ModelState.AddModelError("Error al consultar insumo", response.Mensaje);
+                ModelState.AddModelError("Error: ", response.Mensaje);
                 var detallesproblemas = new ValidationProblemDetails(ModelState);
                 if(response.Mensaje == "No existe")
                 {
@@ -54,7 +65,21 @@ namespace Parcial2WebDotNet.Controllers
             return Ok(new PersonaViewModel(response.Persona));
         }
 
-*/
+        // GET: api/Persona/5​
+        [HttpGet]
+        public ActionResult<PersonaViewModel> Gets()
+        {
+            var response = _service.ConsultarPersonas();
+            if(response.Error)
+            {
+                ModelState.AddModelError("Error al consultar insumo", response.Mensaje);
+                var detallesproblemas = new ValidationProblemDetails(ModelState);
+
+                detallesproblemas.Status = StatusCodes.Status500InternalServerError;
+                return BadRequest(detallesproblemas);
+            }
+            return Ok(response.Personas.Select(a => new PersonaViewModel(a)));
+        }
         private Persona MapearPersona(PersonaInputModel personaInput)
         {
             var persona = new Persona

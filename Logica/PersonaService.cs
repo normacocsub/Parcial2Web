@@ -22,38 +22,41 @@ namespace Logica
             try
             {
                 List<Vacuna> vacunas = new List<Vacuna>();
-                var personaresponse = (_context.Personas.Include(v => v.Vacunas)).ToList().Find(p => p.Cedula == persona.Cedula);
+                var personaresponse = _context.Personas.Find(persona.Cedula);
+                vacunas = _context.Vacunas.ToList();
                 if (personaresponse != null)
                 {
                     foreach (var item in persona.Vacunas)
                     {
-                        foreach (var item2 in personaresponse.Vacunas)
+                        foreach (var item2 in vacunas)
                         {
-                            if (item.NombreVacuna != item2.NombreVacuna)
+                            if (item2.CedulaPersona == persona.Cedula)
                             {
-                                item.CalcularEdadAplicacion(persona.FechaNacimiento);
-                                item.NombreVacuna += ";"+ persona.Cedula;
-                                vacunas.Add(item);
-                            }
-                            else
-                            {
-                                vacunas.Add(item2);
+                                if (item.NombreVacuna != item2.NombreVacuna)
+                                {
+                                    item.CalcularEdadAplicacion(persona.FechaNacimiento);
+                                    item.NombreVacuna += ";" + persona.Cedula;
+                                    item.CedulaPersona = persona.Cedula;
+                                    _context.Vacunas.Add(item);
+                                }
                             }
                         }
                     }
-                    personaresponse.Vacunas = vacunas;
-                    _context.Personas.Update(personaresponse);
                     _context.SaveChanges();
                     return new GuardarPersonaResponse(persona);
                 }
                 else
                 {
+                    _context.Personas.Add(persona);
+                    _context.SaveChanges();
                     foreach (var item in persona.Vacunas)
                     {
                         item.NombreVacuna += ";" + persona.Cedula;
                         item.CalcularEdadAplicacion(persona.FechaNacimiento);
+                        item.CedulaPersona = persona.Cedula;
+                        _context.Vacunas.Add(item);
                     }
-                    _context.Personas.Add(persona);
+
                     _context.SaveChanges();
                     return new GuardarPersonaResponse(persona);
                 }

@@ -1,7 +1,9 @@
 using Datos;
 using Entity;
 using Logica;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Parcial2WebDotNet.Models;
 
 namespace Parcial2WebDotNet.Controllers
 {
@@ -24,14 +26,6 @@ namespace Parcial2WebDotNet.Controllers
             {
                 ModelState.AddModelError("Error al guardar persona", response.Mensaje);
                 var detallesproblemas = new ValidationProblemDetails(ModelState);
-                if (response.Mensaje == "Duplicado")
-                {
-                    detallesproblemas.Status = StatusCodes.Status400BadRequest;
-                }
-                else
-                {
-                    detallesproblemas.Status = StatusCodes.Status500InternalServerError;
-                }
                 return BadRequest(detallesproblemas);
             }
             return Ok(response.Persona);
@@ -65,13 +59,14 @@ namespace Parcial2WebDotNet.Controllers
         {
             var persona = new Persona
             {
-                Identificacion = personaInput.Identificacion,
+                Cedula = personaInput.Cedula,
                 Nombre = personaInput.Nombre,
-                Apellidos = personaInput.Apellidos,
-                Correo = personaInput.Correo,
+                Apellido = personaInput.Apellido,
                 Edad = personaInput.Edad,
-                Sexo = personaInput.Sexo,
-                Usuario = personaInput.Usuario
+                FechaNacimiento = personaInput.FechaNacimiento,
+                InstitucionEducativa = personaInput.InstitucionEducativa,
+                NombreAcudiente = personaInput.NombreAcudiente,
+                Vacunas = personaInput.Vacunas
             };
             return persona;
         }

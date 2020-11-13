@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(ParcialContext))]
-    [Migration("20201112234716_InitialCreate")]
+    [Migration("20201113003933_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,27 +57,27 @@ namespace Datos.Migrations
                     b.Property<string>("NombreVacuna")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("CedulaPersona")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("EdadAplicacion")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("FechaVacuna")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PersonaCedula")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("NombreVacuna");
 
-                    b.HasIndex("PersonaCedula");
+                    b.HasIndex("CedulaPersona");
 
-                    b.ToTable("Vacuna");
+                    b.ToTable("Vacunas");
                 });
 
             modelBuilder.Entity("Entity.Vacuna", b =>
                 {
                     b.HasOne("Entity.Persona", null)
-                        .WithMany("Vacunas")
-                        .HasForeignKey("PersonaCedula");
+                        .WithMany()
+                        .HasForeignKey("CedulaPersona");
                 });
 #pragma warning restore 612, 618
         }

@@ -26,35 +26,35 @@ namespace Datos.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Vacuna",
+                name: "Vacunas",
                 columns: table => new
                 {
                     NombreVacuna = table.Column<string>(nullable: false),
                     FechaVacuna = table.Column<DateTime>(nullable: false),
                     EdadAplicacion = table.Column<int>(nullable: false),
-                    PersonaCedula = table.Column<string>(nullable: true)
+                    CedulaPersona = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Vacuna", x => x.NombreVacuna);
+                    table.PrimaryKey("PK_Vacunas", x => x.NombreVacuna);
                     table.ForeignKey(
-                        name: "FK_Vacuna_Personas_PersonaCedula",
-                        column: x => x.PersonaCedula,
+                        name: "FK_Vacunas_Personas_CedulaPersona",
+                        column: x => x.CedulaPersona,
                         principalTable: "Personas",
                         principalColumn: "Cedula",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vacuna_PersonaCedula",
-                table: "Vacuna",
-                column: "PersonaCedula");
+                name: "IX_Vacunas_CedulaPersona",
+                table: "Vacunas",
+                column: "CedulaPersona");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Vacuna");
+                name: "Vacunas");
 
             migrationBuilder.DropTable(
                 name: "Personas");

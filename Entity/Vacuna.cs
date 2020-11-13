@@ -11,11 +11,6 @@ namespace Entity
         public int EdadAplicacion { get; set; }
         public string CedulaPersona { get; set; }
         
-        
-        
-        
-
-
         public int CalcularEdadAplicacion(DateTime fecha)
         {
             EdadAplicacion = FechaVacuna.Year - fecha.Year;

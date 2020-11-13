@@ -13,6 +13,11 @@ namespace Datos
         public DbSet<Persona> Personas { get; set; }
         public DbSet<Vacuna> Vacunas { get; set; }
 
-        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Vacuna>()
+            .HasOne<Persona>().WithMany()
+            .HasForeignKey(p => p.CedulaPersona);
+        }
     }
 }

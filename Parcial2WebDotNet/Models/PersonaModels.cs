@@ -1,14 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using Entity;
 
-namespace Entity
+namespace Parcial2WebDotNet.Models
 {
-    public class Persona
+    public class PersonaInputModel
     {
-        public string TipoDocumento { get; set; }
-        [Key]
         public string Cedula { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -16,8 +13,11 @@ namespace Entity
         public DateTime FechaNacimiento { get; set; }
         public string InstitucionEducativa { get; set; }
         public string NombreAcudiente { get; set; }
-        [NotMapped]
         public List<Vacuna> Vacunas { get; set; }
+    }
+
+    public class PersonaViewModel : PersonaInputModel
+    {
         
     }
 }

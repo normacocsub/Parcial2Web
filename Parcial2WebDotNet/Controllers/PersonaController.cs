@@ -65,7 +65,7 @@ namespace Parcial2WebDotNet.Controllers
             return Ok(new PersonaViewModel(response.Persona));
         }
 
-        // GET: api/Persona/5​
+        // GET: api/Persona
         [HttpGet]
         public ActionResult<PersonaViewModel> Gets()
         {

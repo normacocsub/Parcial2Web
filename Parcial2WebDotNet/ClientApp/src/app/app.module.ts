@@ -13,6 +13,7 @@ import { ModalComponent } from './@base/modal/modal/modal.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FiltroTextPipe } from './pipe/filtro-text.pipe';
 import { ModalRegistroEstudianteComponent } from './@base/modal/modal-registro-estudiante/modal-registro-estudiante.component';
+import { RegistroVacunaComponent } from './parcial/registro-vacuna/registro-vacuna.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ModalRegistroEstudianteComponent } from './@base/modal/modal-registro-e
     FetchDataComponent,
     ModalComponent,
     FiltroTextPipe,
-    ModalRegistroEstudianteComponent
+    ModalRegistroEstudianteComponent,
+    RegistroVacunaComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +38,7 @@ import { ModalRegistroEstudianteComponent } from './@base/modal/modal-registro-e
 ], { relativeLinkResolution: 'legacy' }),
     AppRoutingModule
   ],
+  entryComponents: [ModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

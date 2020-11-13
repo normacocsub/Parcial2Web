@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ModalComponent } from './@base/modal/modal/modal.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FiltroTextPipe } from './pipe/filtro-text.pipe';
+import { ModalRegistroEstudianteComponent } from './@base/modal/modal-registro-estudiante/modal-registro-estudiante.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FiltroTextPipe } from './pipe/filtro-text.pipe';
     CounterComponent,
     FetchDataComponent,
     ModalComponent,
-    FiltroTextPipe
+    FiltroTextPipe,
+    ModalRegistroEstudianteComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

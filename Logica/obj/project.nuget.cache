@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ACDI7W/mEnEI/yRyZbmVYent2AEXq2GBPGQRowSpoWRkl7d5Svc7KTpqcnPHvMsKlfave0zMp3RPPeaL19g0dA==",
+  "dgSpecHash": "gVD9esoJJ8YjEow4hoebKyDHkqQBLT4qsilhXV9U1Z1CGIYDBMhf3AixkM9d7K1LumQRNU04gtBl+VIjtWAOHQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\norma\\Desktop\\Parcial2Web\\Logica\\Logica.csproj",
+  "projectFilePath": "C:\\Users\\norma\\Documents\\GitHub\\Parcial2Web\\Logica\\Logica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\norma\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\norma\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

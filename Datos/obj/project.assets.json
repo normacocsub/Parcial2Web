@@ -6226,11 +6226,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\norma\\Desktop\\Parcial2Web\\Datos\\Datos.csproj",
+      "projectUniqueName": "C:\\Users\\norma\\Documents\\GitHub\\Parcial2Web\\Datos\\Datos.csproj",
       "projectName": "Datos",
-      "projectPath": "C:\\Users\\norma\\Desktop\\Parcial2Web\\Datos\\Datos.csproj",
+      "projectPath": "C:\\Users\\norma\\Documents\\GitHub\\Parcial2Web\\Datos\\Datos.csproj",
       "packagesPath": "C:\\Users\\norma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\norma\\Desktop\\Parcial2Web\\Datos\\obj\\",
+      "outputPath": "C:\\Users\\norma\\Documents\\GitHub\\Parcial2Web\\Datos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -6251,8 +6251,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\norma\\Desktop\\Parcial2Web\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\norma\\Desktop\\Parcial2Web\\Entity\\Entity.csproj"
+            "C:\\Users\\norma\\Documents\\GitHub\\Parcial2Web\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\norma\\Documents\\GitHub\\Parcial2Web\\Entity\\Entity.csproj"
             }
           }
         }

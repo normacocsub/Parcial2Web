@@ -1,6 +1,7 @@
 using System;
-using Entity;
 using Microsoft.EntityFrameworkCore;
+using Entity;
+
 namespace Datos
 {
     public class ParcialContext : DbContext
@@ -9,6 +10,9 @@ namespace Datos
         {
             
         } 
-        //public DbSet<Persona> Personas { get; set; }
+        public DbSet<Persona> Personas { get; set; }
+        public DbSet<Vacuna> Vacunas { get; set; }
+
+        
     }
 }

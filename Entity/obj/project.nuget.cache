@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rfXILZdmsle4j6GvayxGPfBUCAJ3uD/ngyHrwCOyLGdsqYb44qnAbO+v335GNB+yDfisC3nrPW6DGTFJogP9xg==",
+  "dgSpecHash": "2CN+KdjCVXjMNPORT6PfcupoZD744Y6oIKx2/Tq4tqqiRa/LT0MSoRR6GeW8zBbM1Lbx8YV4okIMTzgL/scWnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\norma\\Desktop\\Parcial2Web\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\norma\\Documents\\GitHub\\Parcial2Web\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\norma\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\norma\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

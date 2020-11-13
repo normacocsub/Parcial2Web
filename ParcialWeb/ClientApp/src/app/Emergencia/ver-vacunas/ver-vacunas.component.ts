@@ -32,4 +32,9 @@ export class VerVacunasComponent implements OnInit {
     
   } 
 
+  Consultar(){
+    this.persona = new Persona;
+    this.persona = JSON.parse(localStorage.getItem('prueba'));
+  }
+
 }

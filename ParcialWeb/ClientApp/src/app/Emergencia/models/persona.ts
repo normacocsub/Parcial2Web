@@ -9,7 +9,7 @@ export class Persona {
     fechaNacimiento: string;
     institucionEducativa: string;
     nombreAcudiente: string;
-    Vacunas: Vacuna[];
+    vacunas: Vacuna[];
 
     
 }

@@ -6,6 +6,10 @@
             </div>​
         </div>
     </div>
+
+    <div class="row">
+        <button class="btn btn-primary mr-1" (click) = "Consultar()">Consultar</button>
+    </div>
     <hr>
     
     <table class="table table-striped"  >​
@@ -21,7 +25,7 @@
         </thead>
         ​
         <tbody>​
-            <tr *ngFor="let vacuna of persona.Vacunas ; index as i ">​
+            <tr *ngFor="let vacuna of persona.vacunas ; index as i ">​
                 <th scope="row">{{ i + 1 }}</th>​
                 <td>{{vacuna.nombreVacuna}}</td>
                 <td>{{vacuna.fechaVacuna}}</td>

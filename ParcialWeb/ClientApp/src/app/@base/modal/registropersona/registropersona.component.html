@@ -8,58 +8,101 @@
                         <h2>Registro de Personas</h2>
 
 
-                        <form>
+                        <form [formGroup]="formGroup">
                             <div class="form-group">​
 
                                 <label>Identificacion</label>​
 
-                                <input type="text" value="{{cedula}}" disabled name="identificacion" />​
+                                <input type="text" value="{{id}}" disabled name="identificacion" />​
                             </div>
                             <div class="form-group">​
 
-                                <label>TipoDocumento</label>​
-                                <select [(ngModel)]="persona.tipoDocumento" name="tipoDocumento" id="tipoDocumento">
+                                <label>TipoDocumento</label>
+                                <select value="{{persona.tipoDocumento}}" name="tipoDocumento"
+                                    [ngClass]="{'is-invalid': control.TipoDocumento.errors && control.TipoDocumento.touched}"
+                                    formControlName="TipoDocumento">
                                     <option>RC</option>
                                     <option>TI</option>
+
                                 </select>
 
+                                <div *ngIf="control.TipoDocumento.errors" class="invalid-feedback">
+                                    <div *ngIf="control.TipoDocumento.errors.required">Se requiere el TipoDocumento
+                                    </div>
+                                </div>​
                             </div>
 
                             <div class="form-group">​
 
                                 <label>Nombre</label>​
-                                <input type="text" [(ngModel)]="persona.nombre" name="nombre" />​
+                                <input type="text"
+                                    [ngClass]="{'is-invalid': control.Nombre.errors && control.Nombre.touched}"
+                                    formControlName="Nombre" value="{{persona.nombre}}" name="Nombre" />
+
+                                <div *ngIf="control.Nombre.errors" class="invalid-feedback">
+                                    <div *ngIf="control.Nombre.errors.required">Se requiere el nombre</div>
+                                </div>​
                             </div>
+
 
                             <div class="form-group">​
 
                                 <label>Apellido</label>​
-                                <input type="text" [(ngModel)]="persona.apellido" name="apellido" />​
-                            </div>
+                                <input type="text"
+                                    [ngClass]="{'is-invalid': control.Apellido.errors && control.Apellido.touched}"
+                                    formControlName="Apellido" value="{{persona.apellido}}" name="apellido" />
 
+                                <div *ngIf="control.Apellido.errors" class="invalid-feedback">
+                                    <div *ngIf="control.Apellido.errors.required">Se requiere el Apellido</div>
+                                </div>​
+                            </div>
 
                             <div class="form-group">​
 
                                 <label>Fecha</label>​
-                                <input type="date" [(ngModel)]="persona.fechaNacimiento" name="fecha" />​
+                                <input type="date"
+                                    [ngClass]="{'is-invalid': control.fechaNacimiento.errors && control.fechaNacimiento.touched}"
+                                    formControlName="fechaNacimiento" value="{{persona.fechaNacimiento}}"
+                                    name="fecha" />
+
+                                <div *ngIf="control.fechaNacimiento.errors" class="invalid-feedback">
+                                    <div *ngIf="control.fechaNacimiento.errors.required">Se requiere la fechaNacimiento
+                                    </div>
+                                </div>​
                             </div>
 
                             <div class="form-group">​
 
                                 <label>Institucion</label>​
-                                <input type="text" [(ngModel)]="persona.institucionEducativa"
-                                    name="institucionEducativa" />​
+                                <input type="text"
+                                    [ngClass]="{'is-invalid': control.InstitucionEducativa.errors && control.InstitucionEducativa.touched}"
+                                    formControlName="InstitucionEducativa" value="{{persona.institucionEducativa}}"
+                                    name="institucionEducativa" />
+
+                                <div *ngIf="control.InstitucionEducativa.errors" class="invalid-feedback">
+                                    <div *ngIf="control.InstitucionEducativa.errors.required">Se requiere la
+                                        InstitucionEducativa</div>
+                                </div>​
                             </div>
 
                             <div class="form-group">​
 
                                 <label>Acudiente</label>​
-                                <input type="text" [(ngModel)]="persona.nombreAcudiente" name="acudiente" />​
+                                <input type="text"
+                                    [ngClass]="{'is-invalid': control.NombreAcudiente.errors && control.NombreAcudiente.touched}"
+                                    formControlName="NombreAcudiente" value="{{persona.nombreAcudiente}}"
+                                    name="acudiente" />
+
+                                <div *ngIf="control.NombreAcudiente.errors" class="invalid-feedback">
+                                    <div *ngIf="control.NombreAcudiente.errors.required">Se requiere el NombreAcudiente
+                                    </div>
+                                </div>​
                             </div>
 
                             <div class="text-center">
-                                <button class="btn btn-primary" (click)="add()">Register</button>
-                                <button class="btn btn-danger" type="reset">Cancel</button>
+                                <button class="btn btn-primary mr-1" (click)="onSubmit()"
+                                    [disabled]="formGroup.invalid">Register</button>
+                                <button class="btn btn-secondary" type="reset">Cancel</button>
                             </div>
                         </form>
                     </div>

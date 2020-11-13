@@ -22,3 +22,15 @@ C:\Users\norma\Documents\GitHub\Parcial2Web\Datos\obj\Debug\netstandard2.0\Datos
 C:\Users\norma\Documents\GitHub\Parcial2Web\Datos\obj\Debug\netstandard2.0\Datos.csproj.CopyComplete
 C:\Users\norma\Documents\GitHub\Parcial2Web\Datos\obj\Debug\netstandard2.0\Datos.dll
 C:\Users\norma\Documents\GitHub\Parcial2Web\Datos\obj\Debug\netstandard2.0\Datos.pdb
+D:\Parcial2Web\Datos\bin\Debug\netstandard2.0\Datos.deps.json
+D:\Parcial2Web\Datos\bin\Debug\netstandard2.0\Datos.dll
+D:\Parcial2Web\Datos\bin\Debug\netstandard2.0\Datos.pdb
+D:\Parcial2Web\Datos\bin\Debug\netstandard2.0\Entity.dll
+D:\Parcial2Web\Datos\bin\Debug\netstandard2.0\Entity.pdb
+D:\Parcial2Web\Datos\obj\Debug\netstandard2.0\Datos.csprojAssemblyReference.cache
+D:\Parcial2Web\Datos\obj\Debug\netstandard2.0\Datos.AssemblyInfoInputs.cache
+D:\Parcial2Web\Datos\obj\Debug\netstandard2.0\Datos.AssemblyInfo.cs
+D:\Parcial2Web\Datos\obj\Debug\netstandard2.0\Datos.csproj.CoreCompileInputs.cache
+D:\Parcial2Web\Datos\obj\Debug\netstandard2.0\Datos.csproj.CopyComplete
+D:\Parcial2Web\Datos\obj\Debug\netstandard2.0\Datos.dll
+D:\Parcial2Web\Datos\obj\Debug\netstandard2.0\Datos.pdb

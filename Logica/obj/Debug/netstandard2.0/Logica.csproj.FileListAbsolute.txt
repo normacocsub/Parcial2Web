@@ -26,3 +26,17 @@ C:\Users\norma\Documents\GitHub\Parcial2Web\Logica\obj\Debug\netstandard2.0\Logi
 C:\Users\norma\Documents\GitHub\Parcial2Web\Logica\obj\Debug\netstandard2.0\Logica.csproj.CopyComplete
 C:\Users\norma\Documents\GitHub\Parcial2Web\Logica\obj\Debug\netstandard2.0\Logica.dll
 C:\Users\norma\Documents\GitHub\Parcial2Web\Logica\obj\Debug\netstandard2.0\Logica.pdb
+D:\Parcial2Web\Logica\bin\Debug\netstandard2.0\Logica.deps.json
+D:\Parcial2Web\Logica\bin\Debug\netstandard2.0\Logica.dll
+D:\Parcial2Web\Logica\bin\Debug\netstandard2.0\Logica.pdb
+D:\Parcial2Web\Logica\bin\Debug\netstandard2.0\Datos.dll
+D:\Parcial2Web\Logica\bin\Debug\netstandard2.0\Entity.dll
+D:\Parcial2Web\Logica\bin\Debug\netstandard2.0\Datos.pdb
+D:\Parcial2Web\Logica\bin\Debug\netstandard2.0\Entity.pdb
+D:\Parcial2Web\Logica\obj\Debug\netstandard2.0\Logica.csprojAssemblyReference.cache
+D:\Parcial2Web\Logica\obj\Debug\netstandard2.0\Logica.AssemblyInfoInputs.cache
+D:\Parcial2Web\Logica\obj\Debug\netstandard2.0\Logica.AssemblyInfo.cs
+D:\Parcial2Web\Logica\obj\Debug\netstandard2.0\Logica.csproj.CoreCompileInputs.cache
+D:\Parcial2Web\Logica\obj\Debug\netstandard2.0\Logica.csproj.CopyComplete
+D:\Parcial2Web\Logica\obj\Debug\netstandard2.0\Logica.dll
+D:\Parcial2Web\Logica\obj\Debug\netstandard2.0\Logica.pdb

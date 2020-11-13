@@ -42,12 +42,6 @@ export class RegistroPersonaComponent implements OnInit {
     this.vacuna.nombreVacuna = '';
     this.formGroup = this.formBuilder.group({
       Cedula: [this.persona.cedula, [Validators.required]],
-      Nombre: [this.persona.nombre, [Validators.required]],
-      Apellido: [this.persona.apellido, [Validators.required, ]],
-      fechaNacimiento: [this.persona.fechaNacimiento, [Validators.required]],
-      InstitucionEducativa: [this.persona.institucionEducativa, [Validators.required]],
-      NombreAcudiente: [this.persona.nombreAcudiente, [Validators.required]],
-      TipoDocumento: [this.persona.tipoDocumento, [Validators.required]],
       FechaVacuna: [this.vacuna.fechaVacuna, [Validators.required]],
       NombreVacuna: [this.vacuna.nombreVacuna, [Validators.required]]
     });
@@ -64,6 +58,7 @@ export class RegistroPersonaComponent implements OnInit {
   }
   add(){
     this.persona.Vacunas = [];
+    this.vacuna = this.formGroup.value;
     this.persona.Vacunas.push(this.vacuna);
     this.service.post(this.persona).subscribe(result => {
       if(result != null){
@@ -86,6 +81,8 @@ export class RegistroPersonaComponent implements OnInit {
       else{
         const  messageBox=this.modalService.open(RegistropersonaComponent);
         messageBox.componentInstance.Cedula = cedula;
+        localStorage.removeItem('parcial-2');
+        localStorage.setItem('parcial-2',cedula);
       }
     });
   }

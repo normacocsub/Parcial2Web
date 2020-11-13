@@ -53,13 +53,9 @@ namespace Logica
                             item.CalcularEdadAplicacion(persona.FechaNacimiento);
                             foreach (var item2 in personaresponse.Vacunas)
                             {
-                                if(item.NombreVacuna != item.NombreVacuna)
+                                if(item.NombreVacuna != item2.NombreVacuna)
                                 {
                                     _context.Vacunas.Add(item);
-                                }
-                                else
-                                {
-                                    return new GuardarPersonaResponse("Ya existe");
                                 }
                             }
                         }

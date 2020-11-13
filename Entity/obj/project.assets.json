@@ -285,11 +285,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\norma\\Documents\\GitHub\\Parcial2Web\\Entity\\Entity.csproj",
+      "projectUniqueName": "D:\\Parcial2Web\\Entity\\Entity.csproj",
       "projectName": "Entity",
-      "projectPath": "C:\\Users\\norma\\Documents\\GitHub\\Parcial2Web\\Entity\\Entity.csproj",
+      "projectPath": "D:\\Parcial2Web\\Entity\\Entity.csproj",
       "packagesPath": "C:\\Users\\norma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\norma\\Documents\\GitHub\\Parcial2Web\\Entity\\obj\\",
+      "outputPath": "D:\\Parcial2Web\\Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -25,31 +25,25 @@
                 </div>
 
 
-                <div class="row">
+                
                     <div>
                         <div class="form-group">​
 
                             <label>TipoDocumento</label>​
                             <input type="text"
-                            [ngClass]="{'is-invalid': control.TipoDocumento.errors && control.TipoDocumento.touched}"
-                        formControlName="TipoDocumento"
+                            disabled
                             value="{{persona.tipoDocumento}}" name="tipoDocumento"/>
-                            <div *ngIf="control.TipoDocumento.errors" class="invalid-feedback">
-                                <div *ngIf="control.TipoDocumento.errors.required">Se requiere el TipoDocumento</div>
-                            </div>​
+​
                         </div>
 
                         <div class="form-group">​
 
                             <label>Nombre</label>​
                             <input type="text"
-                            [ngClass]="{'is-invalid': control.Nombre.errors && control.Nombre.touched}"
-                        formControlName="Nombre"
+                            disabled
                             value="{{persona.nombre}}" name="Nombre" />
                             
-                            <div *ngIf="control.Nombre.errors" class="invalid-feedback">
-                                <div *ngIf="control.Nombre.errors.required">Se requiere el nombre</div>
-                            </div>​
+​
                         </div>
 
 
@@ -57,52 +51,37 @@
 
                             <label>Apellido</label>​
                             <input type="text"
-                            [ngClass]="{'is-invalid': control.Apellido.errors && control.Apellido.touched}"
-                        formControlName="Apellido"
+                            disabled
                             value="{{persona.apellido}}" name="apellido" />
-                            
-                            <div *ngIf="control.Apellido.errors" class="invalid-feedback">
-                                <div *ngIf="control.Apellido.errors.required">Se requiere el Apellido</div>
-                            </div>​
+​
                         </div>
 
                         <div class="form-group">​
 
                             <label>Fecha</label>​
                             <input type="date"
-                            [ngClass]="{'is-invalid': control.fechaNacimiento.errors && control.fechaNacimiento.touched}"
-                        formControlName="fechaNacimiento"
+                            disabled
                             value="{{persona.fechaNacimiento}}" name="fecha" />
-                            
-                            <div *ngIf="control.fechaNacimiento.errors" class="invalid-feedback">
-                                <div *ngIf="control.fechaNacimiento.errors.required">Se requiere la fechaNacimiento</div>
-                            </div>​
+​
                         </div>
 
                         <div class="form-group">​
 
                             <label>Institucion</label>​
                             <input type="text"
-                            [ngClass]="{'is-invalid': control.InstitucionEducativa.errors && control.InstitucionEducativa.touched}"
-                        formControlName="InstitucionEducativa"
+                            disabled
                             value="{{persona.institucionEducativa}}" name="institucionEducativa" />
                             
-                            <div *ngIf="control.InstitucionEducativa.errors" class="invalid-feedback">
-                                <div *ngIf="control.InstitucionEducativa.errors.required">Se requiere la InstitucionEducativa</div>
-                            </div>​
+​
                         </div>
 
                         <div class="form-group">​
 
                             <label>Acudiente</label>​
                             <input type="text"
-                            [ngClass]="{'is-invalid': control.NombreAcudiente.errors && control.NombreAcudiente.touched}"
-                            formControlName="NombreAcudiente"
+                            disabled
                             value="{{persona.nombreAcudiente}}" name="acudiente" />
-                            
-                            <div *ngIf="control.NombreAcudiente.errors" class="invalid-feedback">
-                                <div *ngIf="control.NombreAcudiente.errors.required">Se requiere el NombreAcudiente</div>
-                            </div>​
+​
                         </div>
                     </div>
 
@@ -143,11 +122,12 @@
                         </div>
 
                     </div>
+
                     <div class="text-center">
                         <button class="btn btn-primary mr-1" (click)="onSubmit()" [disabled]="formGroup.invalid">Register</button>
                         <button class="btn btn-secondary" type="reset">Cancel</button>
                     </div>
-                </div>
+                
             </form>
         </div>
 
